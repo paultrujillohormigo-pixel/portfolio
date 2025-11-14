@@ -5,80 +5,173 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Paul Trujillo - Portfolio</title>
 <style>
-body { margin:0; font-family: Arial; background:#111; color:white; }
-.hero { display:flex; justify-content:center; align-items:center; padding:80px 20px; }
-.hero img { width:300px; border-radius:20px; }
+    body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background: #0d0d0d;
+        color: #ffffff;
+    }
 
+    /* HERO */
+    .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 100px 10%;
+        background: linear-gradient(135deg, #ff3131, #ffae00);
+    }
 
-.about { padding:60px 20px; text-align:center; }
-.about-images { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
-.about-images img { width:300px; border-radius:20px; }
+    .hero-text h1 {
+        font-size: 50px;
+        font-weight: bold;
+    }
 
+    .hero-text p {
+        font-size: 20px;
+        max-width: 450px;
+    }
 
-.skills { padding:60px 0; overflow:hidden; position:relative; }
-.skills-track { display:flex; gap:40px; animation: scroll 40s linear infinite; }
-.skills img { height:120px; border-radius:12px; }
-@keyframes scroll {
-0% { transform: translateX(0); }
-100% { transform: translateX(-50%); }
-}
+    .hero-img img {
+        width: 350px;
+        border-radius: 20px;
+        box-shadow: 0 0 25px rgba(0,0,0,0.4);
+    }
 
+    /* ABOUT */
+    .about {
+        padding: 80px 10%;
+        text-align: center;
+    }
 
-.social { padding:60px 20px; text-align:center; }
-.social a { color:#ffcc00; display:block; margin:8px 0; font-size:20px; }
+    .about h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .about-images {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    .about-images img {
+        width: 300px;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
+    /* SKILLS SLIDER */
+    .skills {
+        padding: 60px 0;
+        background: #1a1a1a;
+        overflow: hidden;
+    }
+
+    .skills h2 {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 30px;
+        color: #ffae00;
+    }
+
+    .skills-track {
+        display: flex;
+        gap: 40px;
+        animation: scroll 45s linear infinite;
+        padding-left: 100%;
+    }
+
+    .skills img {
+        height: 140px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-200%); }
+    }
+
+    /* SOCIAL */
+    .social {
+        padding: 80px 10%;
+        text-align: center;
+        background: #0d0d0d;
+    }
+
+    .social h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        color: #ff3131;
+    }
+
+    .social a {
+        display: block;
+        font-size: 22px;
+        margin: 10px 0;
+        color: #ffae00;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .social a:hover {
+        color: #ffffff;
+    }
 </style>
 </head>
 <body>
 
-
 <!-- HERO -->
 <section class="hero">
-<img src="hero.jpeg" alt="Foto Principal Paul" />
+    <div class="hero-text">
+        <h1>Paul Trujillo</h1>
+        <p>Padre de familia, emprendedor y entusiasta de la vida. Fundador de Señor Chilaquil y apasionado por crear grandes cosas.</p>
+    </div>
+    <div class="hero-img">
+        <img src="hero.jpeg" alt="Foto Principal Paul" />
+    </div>
 </section>
-
 
 <!-- ABOUT -->
 <section class="about">
-<h2>Sobre Mí</h2>
-<p>Fan de la comida, su preparación y lo que sucede alrededor: familia, amigos y convivencia.</p>
-<div class="about-images">
-<img src="marian2.jpeg" alt="Foto Marian 1" />
-<img src="marale" alt="Foto Marian 2" />
-</div>
+    <h2>Sobre Mí</h2>
+    <p>Fan de la comida, su preparación y lo que sucede alrededor: familia, amigos y convivencia.</p>
+    <div class="about-images">
+        <img src="marian2.jpeg" alt="Foto Marian 1" />
+        <img src="marale" alt="Foto Marian 2" />
+    </div>
 </section>
-
 
 <!-- SKILLS SLIDER -->
 <section class="skills">
-<h2 style="text-align:center; margin-bottom:30px;">Experiencia Visual</h2>
-<div class="skills-track">
-<img src="HQMB.JPEG" alt="Skill" />
-<img src="hughes_net.jpeg" alt="Skill" />
-<img src="TIKTOK1.JPEG" alt="Skill" />
-<img src="TIKTOK3.JPEG" alt="Skill" />
-<img src="TP1.JPEG" alt="Skill" />
-<img src="TIKTOK2.JPEG" alt="Skill" />
-<img src="SRCHILAQUIL.JPG" alt="Skill" />
-<!-- Duplicate for seamless loop -->
-<img src="HQMB.JPEG" alt="Skill" />
-<img src="hughes_net.jpeg" alt="Skill" />
-<img src="TIKTOK1.JPEG" alt="Skill" />
-<img src="TIKTOK3.JPEG" alt="Skill" />
-<img src="TP1.JPEG" alt="Skill" />
-<img src="TIKTOK2.JPEG" alt="Skill" />
-<img src="SRCHILAQUIL.JPG" alt="Skill" />
-</div>
+    <h2>Experiencia Visual</h2>
+    <div class="skills-track">
+        <img src="HQMB.JPEG" />
+        <img src="hughes_net.jpeg" />
+        <img src="TIKTOK1.JPEG" />
+        <img src="TIKTOK3.JPEG" />
+        <img src="TP1.JPEG" />
+        <img src="TIKTOK2.JPEG" />
+        <img src="SRCHILAQUIL.JPG" />
+        <img src="HQMB.JPEG" />
+        <img src="hughes_net.jpeg" />
+        <img src="TIKTOK1.JPEG" />
+        <img src="TIKTOK3.JPEG" />
+        <img src="TP1.JPEG" />
+        <img src="TIKTOK2.JPEG" />
+        <img src="SRCHILAQUIL.JPG" />
+    </div>
 </section>
-
 
 <!-- SOCIAL LINKS -->
 <section class="social">
-<h2>Redes Sociales</h2>
-<a href="https://www.linkedin.com/in/paul-trujillo-319482209/" target="_blank">LinkedIn Personal</a>
-<a href="https://www.instagram.com/paultrujilloh" target="_blank">Instagram Personal</a>
-<a href="https://www.instagram.com/senorchilaquilmx" target="_blank">Instagram Señor Chilaquil</a>
+    <h2>Redes Sociales</h2>
+    <a href="https://www.linkedin.com/in/paul-trujillo-319482209/" target="_blank">LinkedIn Personal</a>
+    <a href="https://www.instagram.com/paultrujilloh" target="_blank">Instagram Personal</a>
+    <a href="https://www.instagram.com/senorchilaquilmx" target="_blank">Instagram Señor Chilaquil</a>
 </section>
-
 
 </body>
 </html>
