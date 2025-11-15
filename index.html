@@ -84,19 +84,20 @@
 
     opacity: 0;
     transform: translateY(60px);
+    position: relative;
 }
 
 /* Imagen arriba */
 .skill-card img {
-    width: 320px;       /* más ancho */
-    height: 180px;      /* más alto */
+    position: absolute;
+    top: -30px;               
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;              
+    height: 160px;             
     object-fit: cover;
     border-radius: 15px;
-
-    margin-bottom: -20px; /* sube la imagen hacia arriba del borde */
-    margin-top: -40px;    /* hace que sobresalga más */
-    position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 /* Hover pro */
