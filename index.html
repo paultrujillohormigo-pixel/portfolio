@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paul Trujillo</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -72,6 +73,39 @@
         .skill-card h3 { margin-bottom: 10px; color: #ff4e50; }
         .skill-card p { color: #666; }
 
+        /* Carousel Section */
+        .carousel-section {
+            padding: 80px 50px;
+            background-color: #ffe8d6;
+            text-align: center;
+        }
+        .carousel-section h2 {
+            font-size: 2.3rem;
+            margin-bottom: 40px;
+            color: #ff4e50;
+        }
+        .carousel {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel-track {
+            display: flex;
+            gap: 30px;
+            animation: scroll 35s linear infinite;
+        }
+        .carousel-track img {
+            width: 250px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            object-fit: cover;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
         /* Footer */
         footer { padding: 40px 50px; text-align: center; background-color: #333; color: white; }
         footer a { color: #ff4e50; font-weight: bold; margin: 0 10px; }
@@ -82,6 +116,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- Hero Section -->
@@ -100,8 +135,34 @@
     <section class="about" id="about">
         <h2>Sobre mí</h2>
         <p>A food enthusiast, passionate not just about cooking, but even more about everything that surrounds it—family, friends, and shared moments. I combine creativity, technology, and business management to build projects with impact. Experienced Customer Service Manager with over 10 years leading teams and driving results through KPI-focused strategies. Certified in SQL, proficient in Python, and an advanced English speaker. Continuously developing additional skills, including German and Japanese, to enhance cross-cultural communication and operational versatility.</p>
+
         <img src="marian2.jpeg" alt="Mariano y Alejandra" style="width:300px; margin-top:30px; border-radius:15px;">
         <img src="marale.jpg" style="width:300px; margin-top:30px; border-radius:15px;">
+    </section>
+
+    <!-- Carousel Section -->
+    <section class="carousel-section">
+        <h2>Mi Galería</h2>
+        <div class="carousel">
+            <div class="carousel-track">
+                <img src="HQMB.JPEG">
+                <img src="hughes_net.jpeg">
+                <img src="TIKTOK1.JPEG">
+                <img src="TIKTOK3.JPEG">
+                <img src="TP1.JPEG">
+                <img src="TIKTOK2.JPEG">
+                <img src="SRCHILAQUIL.JPG">
+
+                <!-- Copia para loop perfecto -->
+                <img src="HQMB.JPEG">
+                <img src="hughes_net.jpeg">
+                <img src="TIKTOK1.JPEG">
+                <img src="TIKTOK3.JPEG">
+                <img src="TP1.JPEG">
+                <img src="TIKTOK2.JPEG">
+                <img src="SRCHILAQUIL.JPG">
+            </div>
+        </div>
     </section>
 
     <!-- Skills Section -->
@@ -125,7 +186,13 @@
 
     <!-- Footer -->
     <footer>
-        <p>Conéctate conmigo: <a href="mailto:paul.trujillo.hormigo@gmail.com">paul.trujillo.hormigo@gmail.com</a> | <a href="https://www.linkedin.com/in/paul-trujillo-319482209/">LinkedIn</a> | <a href="https://www.instagram.com/paultrujilloh">Instagram</a></p>
+        <p>
+            Conéctate conmigo:
+            <a href="mailto:paul.trujillo.hormigo@gmail.com">Email</a> |
+            <a href="https://www.linkedin.com/in/paul-trujillo-319482209/">LinkedIn</a> |
+            <a href="https://www.instagram.com/paultrujilloh">Instagram</a> |
+            <a href="https://www.instagram.com/senorchilaquilmx/">Señor Chilaquil</a>
+        </p>
     </footer>
 
     <script>
@@ -138,10 +205,10 @@
             });
         }, { threshold: 0.3 });
 
-        document.querySelectorAll('.hero-text, .hero-img, .about h2, .about p, .skill-card').forEach(el => {
-            observer.observe(el);
-        });
+        document.querySelectorAll('.hero-text, .hero-img, .about h2, .about p, .skill-card')
+            .forEach(el => observer.observe(el));
     </script>
 
 </body>
 </html>
+
