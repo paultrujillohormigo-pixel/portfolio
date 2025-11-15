@@ -52,21 +52,30 @@
         .about h2.visible { opacity: 1; transform: translateY(0); }
         .about p { max-width: 700px; margin: 0 auto; font-size: 1.1rem; color: #555; opacity: 0; transform: translateY(50px); transition: all 1s ease; }
         .about p.visible { opacity: 1; transform: translateY(0); }
+/* Skills Section */
+.skills {
+    display: flex;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;   /* 👈 centra vertical */
+    gap: 30px;
+    padding: 80px 50px;
+    background-color: #fff4e1;
+}
 
-        /* Skills Section */
-        .skills { display: flex; min-height: 100vh; flex-wrap: wrap; justify-content: center; gap: 30px; padding: 80px 50px; background-color: #fff4e1; }
-        .skill-card {
-            background: white;
-            padding: 25px 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            flex: 1 1 200px;
-            max-width: 250px;
-            text-align: center;
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(50px);
-        }
+.skill-card {
+    background: white;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    flex: 0 1 200px;   /* 👈 evita que se hagan grandes */
+    max-width: 250px;
+    text-align: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(50px);
+}
         .skill-card.visible { opacity: 1; transform: translateY(0); }
         .skill-card:hover { transform: translateY(-10px) scale(1.05); }
         .skill-card img { width: 100px; margin-bottom: 10px; border-radius: 10px; }
