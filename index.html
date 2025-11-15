@@ -55,26 +55,38 @@
 /* Skills Section */
 .skills {
     display: flex;
-    min-height: 100vh;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;   /* 👈 centra vertical */
     gap: 30px;
     padding: 80px 50px;
     background-color: #fff4e1;
+    min-height: 100vh; /* mantiene la sección grande */
 }
 
 .skill-card {
+    width: 300px;            /* ancho fijo */
+    height: 230px;           /* alto fijo */
     background: white;
-    padding: 25px 30px;
+    padding: 25px;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    flex: 0 1 200px;   /* 👈 evita que se hagan grandes */
-    max-width: 350px;
     text-align: center;
+    display: flex;
+    flex-direction: column;  /* organiza título + texto vertical */
+    justify-content: center; /* centra contenido */
+    align-items: center;
     transition: all 0.3s ease;
     opacity: 0;
     transform: translateY(50px);
+}
+
+.skill-card h3 {
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    margin: 0;
+    line-height: 1.4;
 }
         .skill-card.visible { opacity: 1; transform: translateY(0); }
         .skill-card:hover { transform: translateY(-10px) scale(1.05); }
@@ -156,23 +168,38 @@
  
 
     <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <div class="skill-card">
-            <img src="SRCHILAQUIL.JPG" alt="Señor Chilaquil">
-            <h3>Emprendimiento</h3>
-            <p>Founder & Operations Manager at Señor Chilaquil</p>
-        </div>
-        <div class="skill-card">
-            <img src="TIM.png" alt="TrustInMaths">
-            <h3>Programming Skills</h3>
-            <p>Python, SQL, Automations & Dashboards</p>
-        </div>
-        <div class="skill-card">
-            <img src="TIKTOK1.jpeg" alt="Business">
-            <h3>Business</h3>
-            <p>High Level business Manager, managering more than 600 heads, looking for the business health as, profitablity, incomes, costs control, prices and KPIs</p>
-        </div>
-    </section>
+    <section id="skills" class="skills">
+    <div class="skill-card">
+        <h3>Skill 1</h3>
+        <p>Descripción corta.</p>
+    </div>
+
+    <div class="skill-card">
+        <h3>Skill 2</h3>
+        <p>Descripción corta.</p>
+    </div>
+
+    <div class="skill-card">
+        <h3>Skill 3</h3>
+        <p>Descripción corta.</p>
+    </div>
+
+    <!-- Nuevos cuadros -->
+    <div class="skill-card">
+        <h3>Inglés</h3>
+        <p>Nivel: B2 / Conversacional avanzado.</p>
+    </div>
+
+    <div class="skill-card">
+        <h3>Habilidad Extra</h3>
+        <p>Algo que quieras mostrar.</p>
+    </div>
+
+    <div class="skill-card">
+        <h3>Otra Habilidad</h3>
+        <p>Lo que quieras agregar.</p>
+    </div>
+</section>
     
    <!-- Carousel Section -->
     <section class="carousel-section">
