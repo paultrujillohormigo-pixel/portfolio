@@ -60,33 +60,49 @@
     gap: 30px;
     padding: 80px 50px;
     background-color: #fff4e1;
-    min-height: 100vh; /* mantiene la sección grande */
+    min-height: 100vh;
 }
 
+/* Cada tarjeta */
 .skill-card {
-    width: 300px;            /* ancho fijo */
-    height: 230px;           /* alto fijo */
+    width: 300px;
+    height: 260px;
     background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     text-align: center;
     display: flex;
-    flex-direction: column;  /* organiza título + texto vertical */
-    justify-content: center; /* centra contenido */
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    transition: all 0.3s ease;
+
+    cursor: pointer;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, opacity 0.8s ease;
+
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(60px);
 }
 
-.skill-card h3 {
+/* Imagen arriba */
+.skill-card img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 12px;
     margin-bottom: 10px;
 }
 
-.skill-card p {
-    margin: 0;
-    line-height: 1.4;
+/* Hover pro */
+.skill-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+/* Animación cuando aparecen */
+.skill-card.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
         .skill-card.visible { opacity: 1; transform: translateY(0); }
         .skill-card:hover { transform: translateY(-10px) scale(1.05); }
@@ -195,36 +211,50 @@
         <p>Algo que quieras mostrar.</p>
     </div>
 
-    <div class="skill-card">
-        <h3>Otra Habilidad</h3>
-        <p>Lo que quieras agregar.</p>
-    </div>
-</section>
-    
-   <!-- Carousel Section -->
-    <section class="carousel-section">
-        <h2>Mi Galería</h2>
-        <div class="carousel">
-            <div class="carousel-track">
-                <img src="HQMB.jpeg">
-                <img src="hughes_net.jpeg">
-                <img src="TIKTOK1.jpeg">
-                <img src="TIKTOK3.jpeg">
-                <img src="TP1.jpeg">
-                <img src="TIKTOK2.jpeg">
-                <img src="SRCHILAQUIL.JPG">
+/* Skills Section */
+        
+<section id="skills" class="skills">
 
-                <!-- Copia para loop perfecto -->
-                <img src="HQMB.jpeg">
-                <img src="hughes_net.jpeg">
-                <img src="TIKTOK1.jpeg">
-                <img src="TIKTOK3.jpeg">
-                <img src="TP1.jpeg">
-                <img src="TIKTOK2.jpeg">
-                <img src="SRCHILAQUIL.JPG">
-            </div>
-        </div>
-    </section>
+    <div class="skill-card" onclick="window.open('#', '_blank')">
+        <img src="SRCHILAQUIL.JPG" alt="Skill">
+        <h3>Emprendimiento</h3>
+        <p>Founder & Manager de Señor Chilaquil</p>
+    </div>
+
+    <div class="skill-card" onclick="window.open('#', '_blank')">
+        <img src="TIM.png" alt="Skill">
+        <h3>Programación</h3>
+        <p>Python, SQL, Automations & Dashboards</p>
+    </div>
+
+    <div class="skill-card" onclick="window.open('#', '_blank')">
+        <img src="TIKTOK1.jpeg" alt="Skill">
+        <h3>Business</h3>
+        <p>+600 heads administrados, KPIs, costos, pricing</p>
+    </div>
+
+    <div class="skill-card" onclick="window.open('#', '_blank')">
+        <img src="HQMB.jpeg" alt="Skill">
+        <h3>Inglés</h3>
+        <p>Nivel avanzado / B2-C1 conversación</p>
+    </div>
+
+    <div class="skill-card" onclick="window.open('#', '_blank')">
+        <img src="hughes_net.jpeg" alt="Skill">
+        <h3>Gestión Operativa</h3>
+        <p>Procesos, métricas y eficiencia operativa</p>
+    </div>
+
+    <div class="skill-card" onclick="window.open('#', '_blank')">
+        <img src="TIKTOK2.jpeg" alt="Skill">
+        <h3>Soft Skills</h3>
+        <p>Liderazgo, comunicación y análisis crítico</p>
+    </div>
+
+</section>
+
+
+        
     <!-- Footer -->
     <footer>
         <p>
