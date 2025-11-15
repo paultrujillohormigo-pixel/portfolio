@@ -88,11 +88,15 @@
 
 /* Imagen arriba */
 .skill-card img {
-    width: 200px;
-    height: 100px;
+    width: 320px;       /* más ancho */
+    height: 180px;      /* más alto */
     object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 10px;
+    border-radius: 15px;
+
+    margin-bottom: -20px; /* sube la imagen hacia arriba del borde */
+    margin-top: -40px;    /* hace que sobresalga más */
+    position: relative;
+    z-index: 2;
 }
 
 /* Hover pro */
@@ -205,7 +209,6 @@
         <p>Advanced B2–C1 English level, capable of handling professional meetings, negotiations, and documentation.</p>
     </div>
 
-    <!-- Nuevos cuadros -->
     <div class="skill-card">
         <img src="TIM.png" alt="Skill">
         <h3>Trust in Maths — Web-based Sports Analytics System</h3>
