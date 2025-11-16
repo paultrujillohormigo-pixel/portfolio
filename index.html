@@ -7,6 +7,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
+
+/* Appointment Section */
+.appointment-section {
+    padding: 80px 50px;
+    background-color: #fff7ec;
+    text-align: center;
+}
+
+.appointment-section h2 {
+    font-size: 2.3rem;
+    color: #ff4e50;
+    margin-bottom: 20px;
+}
+
+.appointment-section p {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    color: #555;
+}
+
+.appointment-form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.appointment-form input,
+.appointment-form textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+.appointment-form button {
+    padding: 14px;
+    background-color: #ff4e50;
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.appointment-form button:hover {
+    background-color: #e64345;
+}
+
+
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Montserrat', sans-serif;
@@ -241,7 +294,25 @@
 
 </section>
 
+<!-- Appointment Section -->
+<section id="appointment" class="appointment-section">
+    <h2>Agenda una cita conmigo</h2>
 
+    <p>Reserva una llamada de 15 a 30 minutos conmigo para hablar de tu proyecto, negocio o cualquier idea que te gustaría desarrollar.</p>
+
+    <form class="appointment-form" action="https://formsubmit.co/paul.trujillo.hormigo@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu correo" required>
+        <input type="datetime-local" name="datetime" required>
+        <textarea name="message" placeholder="¿Qué te gustaría platicar?" rows="4"></textarea>
+
+        <!-- configuraciones ocultas -->
+        <input type="hidden" name="_subject" value="Nueva cita agendada">
+        <input type="hidden" name="_captcha" value="false">
+        
+        <button type="submit">Agendar cita</button>
+    </form>
+</section>
         
     <!-- Footer -->
     <footer>
