@@ -14,7 +14,7 @@ CORS(app)
 # -----------------------------
 GOOGLE_CLIENT_SECRETS = "client_secret.json"
 SCOPES = ["https://www.googleapis.com/auth/calendar.events"]
-REDIRECT_URI = "https://portfolio-production-1cfa.up.railway.app/oauth2callback"  # 🚨 URL de producción completa
+REDIRECT_URI = os.getenv("REDIRECT_URI", "https://portfolio-production-1cfa.up.railway.app/oauth2callback")
 
 TOKEN_FILE = "token.json"
 
@@ -47,7 +47,7 @@ def oauth_callback():
     with open(TOKEN_FILE, "w") as token:
         token.write(credentials.to_json())
 
-    return "Google Calendar conectado exitosamente! 🎉"
+    return "Google Calendar connected successfully! 🎉"
 
 # -----------------------------
 # API — CREATE EVENT
@@ -57,7 +57,7 @@ def create_event():
     data = request.json
 
     if not os.path.exists(TOKEN_FILE):
-        return jsonify({"error": "Google Calendar no está conectado. Ve a /authorize"}), 400
+        return jsonify({"error": "Google Calendar is not connected. Go to /authorize"}), 400
 
     credentials = Credentials.from_authorized_user_file(TOKEN_FILE, SCOPES)
     service = build("calendar", "v3", credentials=credentials)
@@ -70,9 +70,9 @@ def create_event():
     }
 
     created_event = service.events().insert(calendarId="primary", body=event).execute()
+
     return jsonify({"success": True, "eventLink": created_event.get("htmlLink")})
 
-# -----------------------------
 @app.route("/")
 def home():
     return "Backend OK — Google Calendar API is running 😊"
