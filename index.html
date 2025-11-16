@@ -300,18 +300,50 @@
 
     <p>Reserva una llamada de 15 a 30 minutos conmigo para hablar de tu proyecto, negocio o cualquier idea que te gustaría desarrollar.</p>
 
-    <form class="appointment-form" action="https://formsubmit.co/paul.trujillo.hormigo@gmail.com" method="POST">
-        <input type="text" name="name" placeholder="Tu nombre" required>
-        <input type="email" name="email" placeholder="Tu correo" required>
-        <input type="datetime-local" name="datetime" required>
-        <textarea name="message" placeholder="¿Qué te gustaría platicar?" rows="4"></textarea>
+    <form class="appointment-form" id="appointmentForm">
+    <input type="text" name="name" placeholder="Tu nombre" required>
+    <input type="email" name="email" placeholder="Tu correo" required>
+    <input type="datetime-local" name="datetime" required>
+    <textarea name="message" placeholder="¿Qué te gustaría platicar?" rows="4"></textarea>
+    <button type="submit">Agendar cita</button>
+</form>
 
-        <!-- configuraciones ocultas -->
-        <input type="hidden" name="_subject" value="Nueva cita agendada">
-        <input type="hidden" name="_captcha" value="false">
-        
-        <button type="submit">Agendar cita</button>
-    </form>
+<script>
+const form = document.getElementById("appointmentForm");
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const start = formData.get("datetime");
+    const endDate = new Date(start);
+    endDate.setMinutes(endDate.getMinutes() + 30); // Duración de 30 min
+
+    const data = {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        message: formData.get("message"),
+        start: new Date(start).toISOString(),
+        end: endDate.toISOString()
+    };
+
+    try {
+        const res = await fetch("/create-event", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+        const result = await res.json();
+        if(result.success){
+            alert("Cita creada! Revisa tu Google Calendar.");
+            form.reset();
+        } else {
+            alert("Error: " + result.error);
+        }
+    } catch(err){
+        alert("Error al conectar con el backend: " + err);
+    }
+});
+</script>
 </section>
         
     <!-- Footer -->
