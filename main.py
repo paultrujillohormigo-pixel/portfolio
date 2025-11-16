@@ -16,7 +16,7 @@ GOOGLE_CLIENT_SECRETS = "client_secret.json"
 SCOPES = ["https://www.googleapis.com/auth/calendar.events"]
 REDIRECT_URI = os.getenv("REDIRECT_URI", "https://portfolio-production-1cfa.up.railway.app/oauth2callback")
 
-TOKEN_FILE = "token.json"
+TOKEN_FILE = "/tmp/token.json"
 
 
 # -----------------------------
