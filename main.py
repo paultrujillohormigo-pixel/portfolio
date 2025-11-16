@@ -19,7 +19,7 @@ GOOGLE_CLIENT_SECRETS = "client_secret.json"
 SCOPES = ["https://www.googleapis.com/auth/calendar.events"]
 
 # REDIRECT_URI debe ser tu dominio de Railway + /oauth2callback
-REDIRECT_URI = os.getenv("REDIRECT_URI", "https://portfolio-production-1cfa.up.railway.app/oauth2callback")
+REDIRECT_URI = os.getenv("REDIRECT_URI","https://portfolio-production-1cfa.up.railway.app/oauth2callback")
 
 # En Railway usamos /tmp para almacenar archivos temporales
 TOKEN_FILE = "/tmp/token.json"
