@@ -6,8 +6,17 @@ from googleapiclient.discovery import build
 import os
 import json
 
+from werkzeug.middleware.proxy_fix import ProxyFix
+
+
 app = Flask(__name__)
+
+
 CORS(app)
+
+app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
+
+
 
 if os.environ.get("FLASK_ENV") == "development":
     os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '0'
