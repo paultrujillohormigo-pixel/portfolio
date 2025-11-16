@@ -37,47 +37,46 @@
 </section>
 
 <script>
-const form = document.getElementById("appointmentForm");
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("appointmentForm");
 
-const getFormData = () => {
-    const formData = new FormData(form);
-    const start = formData.get("datetime");
-    const endDate = new Date(start);
-    endDate.setMinutes(endDate.getMinutes() + 30); // Duración 30 min
-    return {
-        name: formData.get("name"),
-        email: formData.get("email"),
-        message: formData.get("message"),
-        start: new Date(start).toISOString(),
-        end: endDate.toISOString()
+    const getFormData = () => {
+        const formData = new FormData(form);
+        const start = formData.get("datetime");
+        const endDate = new Date(start);
+        endDate.setMinutes(endDate.getMinutes() + 30); // Duración 30 min
+        return {
+            name: formData.get("name"),
+            email: formData.get("email"),
+            message: formData.get("message"),
+            start: new Date(start).toISOString(),
+            end: endDate.toISOString()
+        };
     };
-};
 
-// Google Calendar
-document.getElementById("btnGoogle").addEventListener("click", async () => {
-    const data = getFormData();
-    try {
-        const res = await fetch("https://portfolio-production-1cfa.up.railway.app/create-event", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data)
-        });
-        const result = await res.json();
-        if(result.success){
-            alert("Cita creada en Google Calendar! Revisa tu calendario.");
-            form.reset();
-        } else {
-            alert("Error: " + result.error);
+    document.getElementById("btnGoogle").addEventListener("click", async () => {
+        const data = getFormData();
+        try {
+            const res = await fetch("https://portfolio-production-1cfa.up.railway.app/create-event", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            });
+            const result = await res.json();
+            if(result.success){
+                alert("Cita creada en Google Calendar! Revisa tu calendario.");
+                form.reset();
+            } else {
+                alert("Error: " + result.error);
+            }
+        } catch(err){
+            alert("Error al conectar con el backend: " + err);
         }
-    } catch(err){
-        alert("Error al conectar con el backend: " + err);
-    }
-});
+    });
 
-// Apple / Outlook (.ICS)
-document.getElementById("btnApple").addEventListener("click", () => {
-    const data = getFormData();
-    const icsContent = `BEGIN:VCALENDAR
+    document.getElementById("btnApple").addEventListener("click", () => {
+        const data = getFormData();
+        const icsContent = `BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//Paul Trujillo//Appointment//EN
 BEGIN:VEVENT
@@ -90,11 +89,12 @@ DESCRIPTION:${data.message} | Email: ${data.email}
 END:VEVENT
 END:VCALENDAR`;
 
-    const blob = new Blob([icsContent], { type: 'text/calendar' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = `Cita_${data.name.replace(/ /g,'_')}.ics`;
-    link.click();
+        const blob = new Blob([icsContent], { type: 'text/calendar' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = `Cita_${data.name.replace(/ /g,'_')}.ics`;
+        link.click();
+    });
 });
 </script>
 <footer>
