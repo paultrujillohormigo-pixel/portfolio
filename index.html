@@ -327,7 +327,7 @@ form.addEventListener("submit", async (e) => {
     };
 
     try {
-        const res = await fetch("/create-event", {
+        const res = await fetch("portfolio-production-1cfa.up.railway.app/create-event", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data)
