@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paul Trujillo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paul Trujillo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
-    <style>
-
+<style>
 /* Appointment Section */
 .appointment-section {
     padding: 80px 50px;
     background-color: #fff7ec;
     text-align: center;
 }
-
 .appointment-section h2 {
     font-size: 2.3rem;
     color: #ff4e50;
     margin-bottom: 20px;
 }
-
 .appointment-section p {
     max-width: 600px;
     margin: 0 auto 40px;
     color: #555;
 }
-
 .appointment-form {
     max-width: 600px;
     margin: auto;
@@ -34,7 +30,6 @@
     flex-direction: column;
     gap: 15px;
 }
-
 .appointment-form input,
 .appointment-form textarea {
     padding: 12px;
@@ -42,7 +37,6 @@
     border: 1px solid #ddd;
     font-size: 1rem;
 }
-
 .appointment-form button {
     padding: 14px;
     background-color: #ff4e50;
@@ -53,254 +47,23 @@
     cursor: pointer;
     transition: 0.3s ease;
 }
-
 .appointment-form button:hover {
     background-color: #e64345;
 }
 
-
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;x
-            color: #333;
-            background-color: #fdfdfd;
-            scroll-behavior: smooth;
-        }
-        a { text-decoration: none; }
-
-        /* Hero Section */
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            padding: 100px 50px;
-            background: linear-gradient(to right, #ff4e50, #f9d423);
-            color: white;
-            min-height: 100vh;
-        }
-        .hero-text { flex: 1 1 500px; opacity: 0; transform: translateX(-50px); transition: all 1s ease; }
-        .hero-text.visible { opacity: 1; transform: translateX(0); }
-        .hero-text h1 { font-size: 3rem; margin-bottom: 20px; }
-        .hero-text p { font-size: 1.2rem; margin-bottom: 30px; }
-        .hero-text a {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: #fff;
-            color: #ff4e50;
-            font-weight: 700;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-        .hero-text a:hover { background-color: #ffe6e1; }
-        .hero-img { flex: 1 1 400px; text-align: center; opacity: 0; transform: translateX(50px); transition: all 1s ease; }
-        .hero-img.visible { opacity: 1; transform: translateX(0); }
-        .hero-img img { width: 300px; border-radius: 50%; border: 5px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-
-        /* About Section */
-        .about { padding: 80px 50px; text-align: center; }
-        .about h2 { font-size: 2.5rem; margin-bottom: 30px; color: #ff4e50; opacity: 0; transform: translateY(50px); transition: all 1s ease; }
-        .about h2.visible { opacity: 1; transform: translateY(0); }
-        .about p { max-width: 700px; margin: 0 auto; font-size: 1.1rem; color: #555; opacity: 0; transform: translateY(50px); transition: all 1s ease; }
-        .about p.visible { opacity: 1; transform: translateY(0); }
-
-
-        
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    padding: 80px 50px;
-    background-color: #fff4e1;
-    min-height: 100vh;
-}
-
-/* Cada tarjeta */
-.skill-card {
-    width: 300px;
-    height: 460px; /* un poco más alto */
-    background: white;
-    padding: 120px 20px 20px; /* 🔥 deja espacio arriba para la imagen */
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    
-    cursor: pointer;
-    transition: transform 0.35s ease, box-shadow 0.35s ease, opacity 0.8s ease;
-
-    opacity: 0;
-    transform: translateY(60px);
-    position: relative;
-    overflow: visible !important;
-}
-/* Imagen arriba */
-.skill-card img {
-    position: absolute;
-    top: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 240px;      /* 🔥 ahora sí se verá más ancha */
-    height: 140px;     /* más rectangular */
-    object-fit: cover;
-    border-radius: 15px;
-    z-index: 2;
-}
-
-/* Hover pro */
-.skill-card:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
-}
-
-/* Animación cuando aparecen */
-.skill-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-        .skill-card.visible { opacity: 1; transform: translateY(0); }
-        .skill-card:hover { transform: translateY(-10px) scale(1.05); }
-        .skill-card h3 { margin-bottom: 10px; color: #ff4e50; }
-        .skill-card p { color: #666; }
-
-        /* Carousel Section */
-        .carousel-section {
-            padding: 80px 50px;
-            background-color: #ffe8d6;
-            text-align: center;
-        }
-        .carousel-section h2 {
-            font-size: 2.3rem;
-            margin-bottom: 40px;
-            color: #ff4e50;
-        }
-        .carousel {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-        }
-        .carousel-track {
-            display: flex;
-            gap: 30px;
-            animation: scroll 35s linear infinite;
-        }
-        .carousel-track img {
-            width: 250px;
-            border-radius: 15px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-            object-fit: cover;
-        }
-        img[src="TP1.jpeg"] {
-    object-position: left;
-}
-
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* Footer */
-        footer { padding: 40px 50px; text-align: center; background-color: #333; color: white; }
-        footer a { color: #ff4e50; font-weight: bold; margin: 0 10px; }
-
-        @media (max-width: 900px) {
-            .hero { flex-direction: column; text-align: center; }
-            .hero-img img { margin-top: 30px; }
-        }
-    </style>
+/* Footer */
+footer { padding: 40px 50px; text-align: center; background-color: #333; color: white; }
+footer a { color: #ff4e50; font-weight: bold; margin: 0 10px; }
+</style>
 </head>
-
 <body>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Hi, soy Paul Trujillo</h1>
-            <p>Family-oriented, passionate about life, and proud father of my son Mariano. Born in Mexico City and proudly calling Aguascalientes my home.</p>
-            <a href="#about">Meet Me(Personal)</a>
-            <a href="#skills">Professional Background</a>
-        </div>
-        <div class="hero-img">
-            <img src="hero.jpeg" alt="Paul Trujillo">
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <h2>About me</h2>
-        <p>A food enthusiast, passionate not just about cooking, but even more about everything that surrounds it—family, friends, and shared moments. I combine creativity, technology, and business management to build projects with impact. Experienced Customer Service Manager with over 10 years leading teams and driving results through KPI-focused strategies. Certified in SQL, proficient in Python, and an advanced English speaker. Continuously developing additional skills, including German and Japanese, to enhance cross-cultural communication and operational versatility.</p>
-
-        <img src="marian2.jpeg" alt="Mariano y Alejandra" style="width:300px; margin-top:30px; border-radius:15px;">
-        <img src="marale.jpg" style="width:300px; margin-top:30px; border-radius:15px;">
-    </section>
-
- 
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-    <div class="skill-card">
-        <img src="TP1.jpeg" alt="Skill">
-        <h3>Business Manager (Teleperformance) </h3>
-        <p>Over 10 years leading large teams (+600 people), promoting performance, communication, and a strong organizational culture.</p>
-    </div>
-
-    <div class="skill-card">
-        <img src="srchi.jpeg" alt="Skill">
-        <h3>Entrepreneurship & Business Growth</h3>
-        <p>Founder of Señor Chilaquil, applying strategy, branding, cost control, pricing, marketing, and continuous improvement.</p>
-    </div>
-
-    <div class="skill-card">
-        <img src="TIKTOK1.jpeg" alt="Skill">
-        <h3>English Communication — Advanced Level</h3>
-        <p>Advanced B2–C1 English level, capable of handling professional meetings, negotiations, and documentation.</p>
-    </div>
-
-    <div class="skill-card">
-        <img src="TIM.png" alt="Skill">
-        <h3>Trust in Maths — Web-based Sports Analytics System</h3>
-        <p>Web application that enables users to verify sports statistics, calculate performance averages and identify trends, user-facing dashboards for insights. Responsibilities included architecture and deployment to ensure reliability and scale.</p>
-    </div>
-
-    <div class="skill-card">
-        <img src="bootcamp.webp" alt="Skill">
-        <h3>100 DAYS PYTHOHN BOOTCAMP| 2025 | UDEMY imparted by Dr. Agela Yu </h3>
-        <p>Completed an intensive 100-day Python program, gaining skills in data analysis, automation, and problem-solving applicable to managerial decision-making.</p>
-    </div>
-     <div class="skill-card">
-         <img src="TIKTOK3.jpeg" alt="Skill">
-        <h3>Project Implementation & Large-Scale Hiring</h3>
-        <p>Led end-to-end implementation of large operational projects, including contract creation, pricing models, and the recruitment and onboarding of over 350 employees.</p>
-    </div>    
-     <div class="skill-card">
-         <img src="logoana.png" alt="Skill">
-        <h3>Fundamentals of Financial and Accounting Information</h3>
-        <p>Completed an online Anahuac Certification covering core principles of financial and accounting information, including financial statements, reporting, and basic analysis.</p>
-    </div>
-     <div class="skill-card">
-         <img src="TIKTOK2.jpeg" alt="Skill">
-        <h3>Executive Reporting & Performance Insights</h3>
-        <p>Experienced in creating high-level monthly, quarterly, and annual reports and presentations, delivering clear financial results, operational performance, and strategic insights to senior leadership.</p>
-    </div>    
-
-<!--Skill Section -->
-        
-
-</section>
 
 <!-- Appointment Section -->
 <section id="appointment" class="appointment-section">
-    <h2>Agenda una cita conmigo</h2>
+<h2>Agenda una cita conmigo</h2>
+<p>Reserva una llamada de 15 a 30 minutos conmigo para hablar de tu proyecto, negocio o cualquier idea que te gustaría desarrollar.</p>
 
-    <p>Reserva una llamada de 15 a 30 minutos conmigo para hablar de tu proyecto, negocio o cualquier idea que te gustaría desarrollar.</p>
-
-    <form class="appointment-form" id="appointmentForm">
+<form class="appointment-form" id="appointmentForm">
     <input type="text" name="name" placeholder="Tu nombre" required>
     <input type="email" name="email" placeholder="Tu correo" required>
     <input type="datetime-local" name="datetime" required>
@@ -345,31 +108,17 @@ form.addEventListener("submit", async (e) => {
 });
 </script>
 </section>
-        
-    <!-- Footer -->
-    <footer>
-        <p>
-            Conéctate conmigo:
-            <a href="mailto:paul.trujillo.hormigo@gmail.com">Email</a> |
-            <a href="https://www.linkedin.com/in/paul-trujillo-319482209/">LinkedIn</a> |
-            <a href="https://www.instagram.com/paultrujilloh">Instagram</a> |
-            <a href="https://www.instagram.com/senorchilaquilmx/">Señor Chilaquil</a>
-        </p>
-    </footer>
 
-    <script>
-        // Animaciones al hacer scroll
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting){
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.3 });
-
-        document.querySelectorAll('.hero-text, .hero-img, .about h2, .about p, .skill-card')
-            .forEach(el => observer.observe(el));
-    </script>
+<!-- Footer -->
+<footer>
+<p>
+Conéctate conmigo:
+<a href="mailto:paul.trujillo.hormigo@gmail.com">Email</a> |
+<a href="https://www.linkedin.com/in/paul-trujillo-319482209/">LinkedIn</a> |
+<a href="https://www.instagram.com/paultrujilloh">Instagram</a> |
+<a href="https://www.instagram.com/senorchilaquilmx/">Señor Chilaquil</a>
+</p>
+</footer>
 
 </body>
 </html>
