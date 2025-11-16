@@ -9,6 +9,9 @@ import json
 app = Flask(__name__)
 CORS(app)
 
+if os.environ.get("FLASK_ENV") == "development":
+    os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
+
 # -----------------------------
 # CONFIG
 # -----------------------------
