@@ -1,0 +1,16 @@
+# Archivos de Python temporales
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Entornos virtuales
+venv/
+env/
+
+# Archivos de configuración sensibles
+client_secret.json
+*.env
+
+# Logs
+*.log
